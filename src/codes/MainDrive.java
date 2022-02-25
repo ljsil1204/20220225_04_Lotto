@@ -79,6 +79,23 @@ public class MainDrive {
 		for(int num : winNumbers) {
 			System.out.println(num);
 		}
+		
+		
+		int correctCount = 0;
+		
+		for(int myNum : myNumbers) {
+			
+			for(int winNum : winNumbers) {
+				
+				if(myNum == winNum) {
+					correctCount++;
+				}
+				
+			}
+			
+		}
+		
+		
 
 	}
 
