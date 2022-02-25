@@ -67,6 +67,36 @@ public class MainDrive {
 			}
 
 		}
+		
+//		보너스 번호 뽑기
+//		제약사항 : 1~45 중 하나. 기존의 당첨번호와 중복X.
+		
+		int bonusNum = 0;
+		
+		while(true) {
+			
+			int randomNum = (int) (Math.random() * 45 + 1);
+			
+			boolean isDuplOk = true;
+			
+			for(int num : winNumbers) {
+				
+				if (randomNum == num) {
+					
+					isDuplOk = false;
+					break;
+				}
+				
+			}
+			
+			if(isDuplOk) {
+				
+				bonusNum = randomNum;
+				break;
+			}
+			
+		}
+		
 
 //		임시 당첨 번호 선정 -> 당첨 등수 로직 테스트용
 //		winNumbers[0] = 10;
@@ -115,14 +145,18 @@ public class MainDrive {
 
 		if (correctCount == 6) {
 			System.out.println("1등");
-		} else if (correctCount == 5) {
+		} 
+		else if (correctCount == 5) {
 //			보너스번호 로직 추가 필요
 			System.out.println("임시 - 3등");
-		} else if (correctCount == 4) {
+		} 
+		else if (correctCount == 4) {
 			System.out.println("4등");
-		} else if (correctCount == 3) {
+		} 
+		else if (correctCount == 3) {
 			System.out.println("5등");
-		} else {
+		} 
+		else {
 			System.out.println("낙첨");
 		}
 
